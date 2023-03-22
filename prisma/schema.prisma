@@ -12,12 +12,14 @@ datasource db {
 
 model User{
   id String @id @default(uuid())
-  firstName String?
+  firstName String ?
   lastName String?
   email String @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   hash String
+
+  @@map("userss")
 }
 
 model Bookmaker{
@@ -27,4 +29,6 @@ model Bookmaker{
   link String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("bookmakers")
 }
